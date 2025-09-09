@@ -1,0 +1,517 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>
+			THE DENOME
+		</title>
+		<style>
+		body{
+			background-color: #000;
+			color:#00ADFB;
+			font-size:18px;
+			font-weight:bolder;
+			
+		}
+		.flex-container {
+    			display: flex;
+  			flex-wrap: wrap;
+		}	
+		.withdrawal{
+			background-color: #000;
+			border-width: 4px;
+			width: 400px;
+			height: 550px;
+			border-radius: 25px;
+			border-color: #e28526;
+			background-image: url("side_bar.png");
+		}
+		.deposit{
+			background-color:#000;
+			width: 400px;
+			height: 550px;
+			border-radius: 25px;
+			border-color: #e28526;
+		}
+		.middle{
+			background-color:#030406;
+			width: 400px;
+			height: 550px;
+			border-radius: 25px;
+			border-color: #e28526;
+		}
+		.btn{
+			background-color:#00AEEF;
+			color:white;
+			font-weight:bold;
+			border-radius:5px;
+			width:100px;
+			height:35px;
+		}
+		.input{
+			width:100px;
+			color:#00AEEF;	
+			font-weigth:bold;
+			height:35px;
+			font-size:30px;
+		}
+		.flex-item-right {
+    			color: #00aef7;
+		}
+		.flex-item-right {
+    			color: #00aef7;
+		}
+		#reminder {
+    			color: #e28526;
+		}
+		@media (max-width:800px){
+			.flex-item-right, .flex-item-left{
+				flex:50%;
+					}
+		}
+		.screened{
+			color:#e28526;;
+		}
+		.btn-infos{	
+			width:100px;
+			color:#FFFFFF;	
+			font-weigth:bolder;
+			height:35px;
+			background-color:#e28526;
+			color:white;
+			border-radius:5px;
+		}
+		.time{
+			font-family: Agency FB;
+			font-size: 40px;
+			font-weight: bolder;
+		}
+		#minutes, #period, #month, #year{
+			color: #e28526;
+		}
+		#hour{
+			color: #fff;
+		}
+		#dayname:hover, #month:hover, #daynum:hover, #year:hover{
+			color:#fff;
+		}
+		#minutes:hover, #period:hover{
+			color:#fff;
+		}
+		#hour:hover, #seconds:hover{
+			color:#e28526;
+		}
+		.commited{
+			color: #e28526;	
+				}
+	
+		.containers .text{
+			position: relative;
+			color: #e28526;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		.containers .text.first-text{
+			color: #00ADFB;
+		}
+		.text.sec-text:before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 24px;
+			width: 266px;
+			background: #030406;
+			border-left: 2px solid;
+			animation: animate 4s steps(12) infinite;
+		}
+		@keyframes animate{
+			40%, 60%{
+				left: 100%;
+				width: 20px;
+			}
+			100%{
+				left: 0%;
+
+			}
+		}
+		</style>
+	</head>
+<body onload="initClock();"> 
+	<div class="container-fluid"> 
+	 <h4 align="center">THE DENOME</h4>
+<hr style="color:#02aef2; width:800px; height:5px;background-color:#02aef2;">
+<hr style="color:#e28526; width:700px; height:5px;background-color:#e28526;">
+<br>
+<div class="flex-container" >
+	<div class="flex-item-left" >
+        <fieldset class="withdrawal">
+            <center><h3>GRAND TOTAL TO DENOMINATION</h3></center>
+		<hr style="color:#02aef2; background-color:#02aef2;">
+<center>
+          <table border="0">
+		<thead>
+			<tr>
+			<th>
+            Grand Total:
+            <input type="text" class="input" name="grandtotal" id="grandtotal" required><br><br>
+              <button type="button" class="btn" onclick="submit1()">RESULT</button>
+	    | <button type="reset" class="btn btn-infos" onclick="submit3()">CLEAR</button>
+	   
+		<hr style="color:#02aef2; background-color:#02aef2;">
+
+  			
+			<div class="screen" id="screen0">
+			</div> 
+			<div class="screen" id="screen1">
+			</div> 
+			<div class="screen" id="screen2">
+			</div>
+			<div class="screen" id="screen3">
+			</div>
+			<div class="screen" id="screen4">
+			</div>
+			<div class="screen" id="screen5">
+			</div>
+			<div class="screen" id="screen6">
+			</div>
+			<div class="screen" id="screen7">
+			</div>
+			<div class="screen" id="reminder">
+			</div>
+			<hr style="color:#e28526; background-color:#e28526;">
+</th>
+</tr>
+	</thead>
+	</table>
+</center>
+<center>
+	<table border="0">
+		<thead>
+              <tr>  <th> <input type="checkbox" name="c200" id="c200" >200
+		 <input type="checkbox" onchange="submit1()"  name="c100" id="c100" >100
+		 <input type="checkbox" onchange="submit1()"  name="c50" id="c50" >50
+		 <input type="checkbox" onchange="submit1()"  name="c10" id="c10">10
+ 		 <input type="checkbox" onchange="submit1()"  name="c5" id="c5" >5
+		 <input type="checkbox" onchange="submit1()" name="c1" id="c1" >1
+		 <input type="checkbox" onchange="submit1()" name="c01" id="c01" >0.1
+</th></tr> 
+</thead>
+	</table></center>		
+</fieldset>
+</div> 
+<div class="flex-third">
+ <fieldset class="middle">
+<img src="coopbank.jpg" width="400px" height="400px" style="border-radius:15px;"> 
+<div class="datetime" align="center">
+  <div class="date">
+    <span id="dayname">Day</span>
+    <span id="month">Month</span>
+    <span id="daynum">00</span>
+    <span id="year">Year</span>
+  </div>
+  <div class="time">
+    <span id="hour">00</span>:
+    <span id="minutes">00</span>:
+    <span id="seconds">00</span>
+    <span id="period">AM</span>
+  </div>
+
+</div>
+<div class="containers" align="center">
+	<span class="text sec-text">Committed to breakthrough!
+</span>
+</div>
+
+</fieldset>
+         
+			</div> 
+<div class="flex-item-right" >
+
+ <fieldset class="deposit">
+             <center><h3>DENOMINATION TO GRAND TOTAL</h3></center>
+		<hr style="color:#02aef2; background-color:#02aef2;"><br>
+		<center>
+        <table border="0">
+		<thead>
+			<tr>
+				<th>200 Note:
+				</th>
+				<th><input type="text" class="input" name="n200" id="n200" onchange="submit2()" ></th>
+				<th><div class="screened" id="total_200">
+			</div> </th>
+			</tr>
+			<tr>
+				<th>100 Note:</th>
+				<th><input type="text" class="input" name="n100" id="n100" onchange="submit2()">
+				</th>
+				<th>
+					<div class="screened" id="total_100">
+					</div> 
+				</th>
+			</tr><tr>
+				<th>50 Note:</th>
+				<th><input type="text" class="input" name="n50" id="n50" onchange="submit2()">
+				</th>
+				<th>
+					<div class="screened" id="total_50">
+					</div> 
+				</th>
+			</tr><tr>
+	
+				<th>10 Note:</th>
+				<th><input type="text" class="input" name="n10" id="n10" onchange="submit2()">
+				</th>
+				<th>
+					<div class="screened" id="total_10">
+					</div> 
+				</th>
+			</tr><tr>
+				<th>5 Note:</th>
+				<th><input type="text" class="input" name="n5" id="n5" onchange="submit2()">
+				</th>
+				<th>
+					<div class="screened" id="total_05">
+					</div> 
+				</th>
+			</tr><tr>
+				<th>1 Note:</th>
+				<th><input type="text" class="input" name="n1" id="n1" onchange="submit2()">
+				</th>
+				<th>
+					<div class="screened" id="total_01">
+					</div> 
+				</th>
+			</tr><tr>
+				<th colspan="2"><center><br>
+				 <!-- <button type="button" class="btn " onclick="submit2()">RESULT</button> |  -->
+				 <button type="reset" class="btn btn-infos" onclick="submit4()">CLEAR</button></center>
+				</th>
+			</tr>
+		</thead>
+	</table>
+  			<hr style="color:#02aef2; background-color:#02aef2;">
+			<div class="screen" id="depositScreen">
+			</div> 
+			<hr style="color:#e28526; background-color:#e28526;">
+		</center>	
+</fieldset>
+</div>
+			
+</div>
+ <script>
+
+    
+  $( document ).ready(function() { }); 
+	function submit1(){ 
+		var grandtotal = document.getElementById("grandtotal").value; 
+		var true_value = grandtotal;
+		var reminder=0;
+		var c200 = document.getElementById("c200").checked;
+		var c100 = document.getElementById("c100").checked;
+		var c50 = document.getElementById("c50").checked;
+		var c10 = document.getElementById("c10").checked;
+		var c5 = document.getElementById("c5").checked;
+		var c1 = document.getElementById("c1").checked;
+		var c01 = document.getElementById("c01").checked;
+
+		document.getElementById("screen1").innerHTML=" ";
+		document.getElementById("screen2").innerHTML=" ";
+		document.getElementById("screen3").innerHTML=" ";
+		document.getElementById("screen4").innerHTML=" ";
+		document.getElementById("screen5").innerHTML=" ";
+		document.getElementById("screen6").innerHTML=" ";
+		document.getElementById("screen7").innerHTML=" ";	
+		document.getElementById("reminder").innerHTML=" ";
+		if(c200 != true && c100 != true && c50 != true && c10 != true && c5 != true && c1 != true && c01 != true){
+			alert("Please select denomination that you have!");
+		}else if(grandtotal ==""){
+			alert("Please enter grand total!");
+		}else {
+		document.getElementById("screen0").innerHTML = "Grand Total: "+  parseInt(grandtotal).toLocaleString("en-US");
+		
+		var b200, b100, b50, b10, b5, b1, b01;
+	 while(grandtotal >= 200 && c200==true){
+        	b200 = parseInt(grandtotal) / 200;
+        	grandtotal = parseInt(grandtotal) % 200;
+		document.getElementById("screen1").innerHTML = "200 Note: " + parseInt(b200).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+	while(grandtotal >= 100 && c100==true){
+        	b100 = parseInt(grandtotal)/ 100;
+        	grandtotal = parseInt(grandtotal)% 100;
+		document.getElementById("screen2").innerHTML = "100 Note: " + parseInt(b100).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+ 	while(grandtotal >= 50 && c50==true){
+        	b50 = parseInt(grandtotal) / 50;
+        	grandtotal = parseInt(grandtotal) % 50;
+		document.getElementById("screen3").innerHTML = "50 Note: " + parseInt(b50).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+ 	while(grandtotal >= 10 && c10==true){
+        	b10 = parseInt(grandtotal) / 10;
+        	grandtotal = parseInt(grandtotal) % 10;
+		document.getElementById("screen4").innerHTML = "10 Note: " + parseInt(b10).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+ 	while(grandtotal >= 5 && c5==true){
+        	b5 = parseInt(grandtotal) / 5;
+        	grandtotal = parseInt(grandtotal) % 5;
+		document.getElementById("screen5").innerHTML = "5 Note: " + parseInt(b5).toLocaleString("en-US");
+		reminder = grandtotal;
+		break;
+            }
+ 	while(grandtotal >= 1 && c1==true){
+        	b1 = parseInt(grandtotal) / 1;
+        	grandtotal = parseInt(grandtotal) % 1;
+		document.getElementById("screen6").innerHTML = "1 Note: " + parseInt(b1).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+    while(grandtotal >= 0.1 && c01==true){
+        	b01 = parseInt(grandtotal) / 0.1;
+        	grandtotal = parseInt(grandtotal) % 0.1;
+		document.getElementById("screen7").innerHTML = "0.1 Note: " + parseInt(b01).toLocaleString("en-US");
+		reminder = grandtotal;
+       		break;
+            }
+	if(reminder>=1){
+		document.getElementById("reminder").innerHTML = "Reminder: " + reminder;
+	}
+}		
+	} 
+
+$( document ).ready(function() { }); 
+	function submit2(){ 
+		var b200 = document.getElementById("n200").value;
+		var b100 = document.getElementById("n100").value; 
+		var b50 = document.getElementById("n50").value; 
+		var b10 = document.getElementById("n10").value; 
+		var b5 = document.getElementById("n5").value; 
+		var b1 = document.getElementById("n1").value;
+
+
+		var result;
+		b200 = b200 * 200;
+		b100 = b100 * 100; 
+		b50 = b50 * 50; 
+		b10 = b10 * 10; 
+		b5 = b5 * 5; 
+		b1 = b1 * 1; 
+		result = b200 + b100 + b50 + b10 + b5 + b1;
+		document.getElementById("depositScreen").innerHTML = "GRAND TOTAL: " + parseInt(result).toLocaleString("en-US");
+		if (b200!=0) {
+		document.getElementById("total_200").innerHTML = parseInt(b200).toLocaleString("en-US");
+	}
+		if (b100!=0) {
+		document.getElementById("total_100").innerHTML = parseInt(b100).toLocaleString("en-US");
+	}
+		if (b50!=0) {
+		document.getElementById("total_50").innerHTML = parseInt(b50).toLocaleString("en-US");
+	}
+		if (b10!=0) {
+		document.getElementById("total_10").innerHTML = parseInt(b10).toLocaleString("en-US");
+	}
+		if (b5!=0) {
+		document.getElementById("total_05").innerHTML = parseInt(b5).toLocaleString("en-US");
+	}
+		if (b1!=0) {
+		document.getElementById("total_01").innerHTML = parseInt(b1).toLocaleString("en-US");
+	}
+	
+} 
+
+$( document ).ready(function() { }); 
+	function submit3(){ 
+		var grandtotal = document.getElementById("grandtotal").value=""; 
+		var screen0 = document.getElementById("screen0").innerHTML = "";
+		var screen1 = document.getElementById("screen1").innerHTML = "";
+		var screen2 = document.getElementById("screen2").innerHTML = "";
+		var screen3 = document.getElementById("screen3").innerHTML = "";
+		var screen4 = document.getElementById("screen4").innerHTML = "";
+		var screen5 = document.getElementById("screen5").innerHTML = "";
+		var screen6 = document.getElementById("screen6").innerHTML = "";
+		var rem = document.getElementById("reminder").innerHTML = "";
+	}
+$( document ).ready(function() { }); 
+	function submit4(){ 
+		var b200 = document.getElementById("n200").value="";
+		var db200 = document.getElementById("total_200").innerHTML="";
+		var b100 = document.getElementById("n100").value=""; 
+		var db100 = document.getElementById("total_100").innerHTML="";
+		var b50 = document.getElementById("n50").value=""; 
+		var db50 = document.getElementById("total_50").innerHTML="";
+		var b10 = document.getElementById("n10").value=""; 
+		var db10 = document.getElementById("total_10").innerHTML="";
+		var b5 = document.getElementById("n5").value=""; 
+		var db05 = document.getElementById("total_05").innerHTML="";
+		var b1 = document.getElementById("n1").value="";
+		var db01 = document.getElementById("total_01").innerHTML="";
+		var result = document.getElementById("depositScreen").innerHTML = "";
+
+	}
+
+	function updateClock() {
+      var now = new Date();
+      var dname = now.getDay(),
+          mo = now.getMonth(),
+          dnum = now.getDate(),
+          yr = now.getFullYear(),
+          hou = now.getHours(),
+          min = now.getMinutes(),
+          sec = now.getSeconds(),
+          pe = "AM";
+
+          if (hou == 0) {
+            hou = 12;
+          }
+          if (hou > 12) {
+            hou = hou - 12;
+            pe = "PM";
+          }
+          Number.prototype.pad = function(digits){
+            for (var n = this.toString(); n.length < digits; n = 0 + n);
+              return n;
+          }
+      var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+      var week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var ids = ["dayname","month","daynum","year","hour","minutes","seconds","period"];
+      var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2),pe];
+for(var i = 0; i < ids.length;i++)
+        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+      
+    }
+    
+    function initClock() {
+      updateClock();
+      window.setInterval("updateClock()", 1);
+    }
+	const text = document.querySelector(".sec-text");
+    	const textLoad = () => {
+    			setTimeout(() => {
+    				text.textContent = " to breakthrough!";
+    		}, 0);
+    			setTimeout(() => {
+    				text.textContent = "Cooperative Bank of Oromia";
+    		}, 5000);
+    			setTimeout(() => {
+    				text.textContent = "BANK";
+    		}, 9000);
+    	}
+    	textLoad();
+    	setInterval(textLoad, 1200);
+</script> 
+<footer>
+<br>
+<hr style="color:#e28526; width:700px; height:5px;background-color:#e28526;">
+<hr style="color:#02aef2; width:800px; height:5px;background-color:#02aef2;">
+	<center>Abdi T. &copy; 2023. All right reserved.</center>
+</footer>
+
+</body> 
+</html>
+

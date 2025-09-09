@@ -1,0 +1,28 @@
+.datetime{
+	color: #fff;
+	background: #10101E;
+	font-family: "Segoe UI", sans-serif;
+	width: 340px;
+	padding: 15px 10px;
+	border: 3px solid #2e94e3;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255,255,255, 0.1));
+}
+.datetime:hover{
+	background: green;
+	box-shadow: 0 0 30px blue;
+}
+.date{
+	font-size: 20px;
+	font-family: "Segoe UI", sans-serif;
+	text-align: center;
+	letter-spacing: 3px;
+}
+.times{
+	font-size: 60px;
+}
+
+
+
+/*style for CPO*/
+
+	
